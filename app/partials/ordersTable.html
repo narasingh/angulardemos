@@ -1,0 +1,44 @@
+﻿<table class="table table-hover table-striped table-condensed table-bordered ordersTable" ng-controller="OrderChildController">
+    <thead>
+        <tr>
+            <th ng-click="setOrder('product')">Product</th>
+            <th ng-click="setOrder('quantity')">Quantity</th>
+            <th ng-click="setOrder('price')">Unit Price</th>
+            <th ng-click="setOrder('orderTotal')">Total</th>
+			<th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-hide="customer.orders || customer.orders.length > 0" class="error">
+            <td colspan="4">
+                <div class="text-center"><strong>No orders found</strong></div>
+            </td>
+        </tr>
+        <tr ng-repeat="order in customer.orders | orderBy:orderby:reverse">
+            <td>
+                {{ order.product }}
+            </td>
+            <td>
+                {{ order.quantity }}
+            </td>
+            <td>
+                {{ order.price | currency }}
+            </td>
+            <td>
+                {{ order.orderTotal | currency }}
+            </td>
+			<td>
+				<a href="javascript:void(0)" ng-click="deleteOrder($index)">Delete</a>
+			</td>
+        </tr>
+        <tr class="info">
+            <td colspan="3">
+                &nbsp;
+            </td>
+            <td>
+                <strong>{{ ordersTotal | currency }}</strong>
+            </td>
+			<td></td>
+        </tr>
+    </tbody>
+</table>
