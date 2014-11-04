@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="orderApp">
+<head>
+    <title>Order Management</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/toaster.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+	 <div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li>
+				<i class="ace-icon fa fa-home home-icon"></i>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#orders">Orders</a>
+			</li>
+			<li>
+				<a href="#customers">Customers</a>
+			</li>
+			<li class="active">Login</li>
+		</ul>
+	</div>
+
+    <div animated-view></div>
+
+	<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                Created by Narasingh Mishra
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.js"></script>
+	<script src="scripts/angular-animate.js" ></script>
+    <script src="scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="Scripts/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+	<script type="text/javascript" src="app/toaster.js"></script>
+    <script src="app/app.js"></script>
+	<script type="text/javascript" src="app/common.js"></script>
+	<script type="text/javascript" src="app/data.js"></script>
+    <script src="app/services/customersService.js"></script>
+	<script src="app/controllers/controllers.js"></script>
+	<script src="app/directives/animatedView.js"></script>
+    
+</body>
+</html>
